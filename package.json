@@ -1,0 +1,35 @@
+{
+  "name": "snoo-shelf",
+  "version": "0.0.1",
+  "description": "Library for organizing Reddit saved posts.",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --env build",
+    "dev": "webpack --progress --colors --watch --env dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/somi92/snoo-shelf.git"
+  },
+  "keywords": [
+    "reddit",
+    "typescript"
+  ],
+  "author": "Milos Stojanovic",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/somi92/snoo-shelf/issues"
+  },
+  "homepage": "https://github.com/somi92/snoo-shelf#readme",
+  "devDependencies": {
+    "ts-loader": "^2.0.3",
+    "typescript": "^2.2.2",
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.4",
+    "yargs": "^7.1.0"
+  },
+  "dependencies": {
+    "snoowrap": "^1.13.0"
+  }
+}
