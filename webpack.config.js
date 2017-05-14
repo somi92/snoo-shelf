@@ -43,7 +43,16 @@ const config = {
     modules: [path.resolve('./src'), 'node_modules/'],
     extensions: ['.json', '.ts', '.js']
   },
-  plugins: plugins
+  plugins: plugins,
+
+  externals: {
+    "snoowrap": {
+      commonjs: "snoowrap",
+      commonjs2: "snoowrap",
+      amd: "snoowrap",
+      root: "snoowrap"
+    }
+  }
 };
 
 module.exports = config;

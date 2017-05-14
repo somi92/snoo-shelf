@@ -1,9 +1,9 @@
 import "mocha"
 import { expect } from "chai"
 
-describe("test suite", () => {
+describe("testing index", () => {
 
-    it("test case", () => {
-        expect(true).to.equal(true)
+    it("nothing", () => {
+        
     })
 })

@@ -1,15 +1,13 @@
-import * as sw from "snoowrap"
+import * as config from "../config/config.json"
+import { RedditApi } from "./api/redditApi";
 
-export default class SnooShelf {
-  
-  private _name;
-  
-  constructor() {
-    this._name = 'SnooShelf'
-  }
+export class SnooShelf {
 
-  public run() {
-      console.log(sw)
-      return this._name
+  constructor() { }
+
+  public run(): void {
+    const api = new RedditApi(config)
+    console.log(api.config)
+    api.getMySavedContent()
   }
 }
