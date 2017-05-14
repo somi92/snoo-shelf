@@ -8,12 +8,14 @@ const env = require('yargs').argv.env; // use --env with webpack 2
 let libraryName = 'snoo_shelf';
 let plugins = [], outputFile;
 
-if (env === 'build') {
-  plugins.push(new UglifyJsPlugin({ minimize: true }));
-  outputFile = libraryName + '.min.js';
-} else {
-  outputFile = libraryName + '.js';
-}
+// TODO: skip UglifyJS because of ES6 issue, need to resolve this (reference: https://github.com/webpack/webpack/issues/2545)
+// if (env === 'build') {
+//   plugins.push(new UglifyJsPlugin({ minimize: true }));
+//   outputFile = libraryName + '.min.js';
+// } else {
+//   outputFile = libraryName + '.js';
+// }
+outputFile = libraryName + '.js';
 
 const config = {
   entry: __dirname + '/src/index.ts',
@@ -32,6 +34,9 @@ const config = {
         loaders: ['ts-loader'],
         exclude: /(node_modules)/
       }
+    ],
+    loaders: [
+      { test: /\.ts$/, loader: 'ts-loader', exclude: /node_modules/ }
     ]
   },
   resolve: {

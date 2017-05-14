@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack --env build",
     "dev": "webpack --progress --colors --watch --env dev",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --opts mocha.opts",
+    "test-watch": "mocha --opts mocha.opts --watch"
   },
   "repository": {
     "type": "git",
@@ -22,11 +23,15 @@
     "url": "https://github.com/somi92/snoo-shelf/issues"
   },
   "homepage": "https://github.com/somi92/snoo-shelf#readme",
-  "//": "for now, use a fork of webpack to resolve the issue with UglifyJS (reference: https://github.com/webpack/webpack/issues/2545)",
   "devDependencies": {
+    "@types/chai": "^3.5.2",
+    "@types/mocha": "^2.2.41",
+    "chai": "^3.5.0",
+    "mocha": "^3.3.0",
     "ts-loader": "^2.0.3",
-    "typescript": "^2.2.2",
-    "webpack": "fulls1z3/webpack#v2.2.1-harmony",
+    "ts-node": "^3.0.4",
+    "typescript": "^2.3.2",
+    "webpack": "^2.5.1",
     "webpack-dev-server": "^2.4.4",
     "yargs": "^7.1.0"
   },
