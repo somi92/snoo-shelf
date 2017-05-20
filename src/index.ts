@@ -8,6 +8,6 @@ export class SnooShelf {
   public run(): void {
     const api = new RedditApi(config)
     console.log(api.config)
-    api.getMySavedContent()
+    api.getMySubscriptions()
   }
 }

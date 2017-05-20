@@ -21,6 +21,14 @@ export class RedditApi {
     }
 
     public getMySavedContent(): void {
-        this._snoowrap.getMe().then(user => user.getSavedContent({ limit: 5000 }).map(post => { return { id: post.id, title: post.title } }).then(console.log))
+        this._snoowrap.getMe()
+            .then(user => user.getSavedContent({ limit: 5000 }))
+            .then(posts => posts[0])
+            .then(console.log)
+    }
+
+    public getMySubscriptions(): void {
+        this._snoowrap
+            .getSubscriptions({limit: 100}).then(subs => subs[0]).then(console.log)
     }
 }
