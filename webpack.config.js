@@ -41,7 +41,7 @@ const config = {
   },
   resolve: {
     modules: [path.resolve('./src'), 'node_modules/'],
-    extensions: ['.json', '.ts', '.js']
+    extensions: ['.json', '.ts', '.d.ts', '.js']
   },
   plugins: plugins,
 
@@ -51,6 +51,12 @@ const config = {
       commonjs2: "snoowrap",
       amd: "snoowrap",
       root: "snoowrap"
+    },
+    "dropbox": {
+      commonjs: "dropbox",
+      commonjs2: "dropbox",
+      amd: "dropbox",
+      root: "dropbox"
     }
   }
 };

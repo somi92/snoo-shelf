@@ -2,10 +2,10 @@ import * as snoowrap from "snoowrap"
 
 export class RedditApi {
 
-    private readonly _config: IConfig;
+    private readonly _config: any;
     private readonly _snoowrap: any;
 
-    constructor(config: IConfig) {
+    constructor(config: any) {
         this._config = config
         this._snoowrap = new snoowrap({
             userAgent: this._config.userAgent,
@@ -16,19 +16,19 @@ export class RedditApi {
         })
     }
 
-    get config(): IConfig {
+    get config(): any {
         return this._config
     }
 
-    public getMySavedContent(): void {
-        this._snoowrap.getMe()
+    public getMySavedContent(): Promise<Post[]> {
+        return this._snoowrap.getMe()
             .then(user => user.getSavedContent({ limit: 5000 }))
-            .then(posts => posts[0])
-            .then(console.log)
+            .then((posts: Post[]) => posts)
     }
 
-    public getMySubscriptions(): void {
-        this._snoowrap
-            .getSubscriptions({limit: 100}).then(subs => subs[0]).then(console.log)
+    public getMySubscriptions(): Promise<Category[]> {
+        return this._snoowrap
+            .getSubscriptions({ limit: 100 })
+            .then((subs: Category[]) => subs)
     }
 }

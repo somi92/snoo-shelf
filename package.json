@@ -26,6 +26,7 @@
   "devDependencies": {
     "@types/chai": "^3.5.2",
     "@types/mocha": "^2.2.41",
+    "@types/node": "^7.0.21",
     "chai": "^3.5.0",
     "inject-loader": "^3.0.0",
     "mocha": "^3.3.0",
@@ -37,6 +38,7 @@
     "yargs": "^7.1.0"
   },
   "dependencies": {
+    "dropbox": "^2.5.3",
     "snoowrap": "^1.14.0"
   }
 }
