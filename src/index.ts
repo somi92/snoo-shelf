@@ -10,7 +10,7 @@ export class SnooShelf {
   public run(): void {
     const api = new RedditApi(redditConfig)
     api.getMySubscriptions().then(val => console.log(val[0].display_name_prefixed))
-    api.getMySavedContent().then(val => console.log(val[0].title))
+    api.getMySavedPosts().then(val => console.log(val[0].title))
     const persistence = new DropboxApi(dropboxConfig)
     persistence
       .write("test", "{ \"id\": 1, \"name\": \"A green door\", \"price\": 12.50, \"tags\": [\"home\", \"green\"] }")

@@ -20,7 +20,7 @@ export class RedditApi {
         return this._config
     }
 
-    public getMySavedContent(): Promise<Post[]> {
+    public getMySavedPosts(): Promise<Post[]> {
         return this._snoowrap.getMe()
             .then(user => user.getSavedContent({ limit: 5000 }))
             .then((posts: Post[]) => posts)
@@ -30,5 +30,12 @@ export class RedditApi {
         return this._snoowrap
             .getSubscriptions({ limit: 100 })
             .then((subs: Category[]) => subs)
+    }
+
+    public unsavePost(id: string): Promise<Post> {
+        return this._snoowrap
+            .getSubmission(id)
+            .unsave()
+            .then((post: Post) => post)
     }
 }
