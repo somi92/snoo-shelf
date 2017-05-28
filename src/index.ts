@@ -55,6 +55,16 @@ export class SnooShelf {
       })
   }
 
+  public saveShelf(): Promise<boolean> {
+    const tagsPromise = this._dropboxApi.write("TAGS", JSON.stringify(this._tags))
+    const taggedPostsPromise = this._dropboxApi.write("TAGGED_POSTS", JSON.stringify(this._taggedPosts))
+    return Promise.all([tagsPromise, taggedPostsPromise])
+      .then(data => true)
+      .catch(error => {
+        throw new Error(error)
+      })
+  }
+
   public tagPost(post: Post, tags: string[]): Post {
     post.tags = tags
     const taggedPostId = this._taggedPosts.indexOf(this._taggedPosts.filter((tg: TaggedPost) => tg.postId == post.id)[0])
