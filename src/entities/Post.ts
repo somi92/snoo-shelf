@@ -15,5 +15,5 @@ class Post {
     title: string
     created_utc: number
     num_comments:number
-    tags: Tag[]
+    tags: string[]
 }
