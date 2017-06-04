@@ -1,4 +1,3 @@
-import { Promise } from "es6-promise"
 import * as redditConfig from "../config/reddit.config.json"
 import * as dropboxConfig from "../config/dropbox.config.json"
 import { RedditApi } from "./api/redditApi";

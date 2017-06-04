@@ -39,9 +39,8 @@
     "yargs": "^7.1.0"
   },
   "dependencies": {
-    "@types/es6-promise": "0.0.32",
     "dropbox": "^2.5.3",
-    "es6-promise": "^4.1.0",
     "snoowrap": "^1.14.0"
-  }
+  },
+  "false": {}
 }
