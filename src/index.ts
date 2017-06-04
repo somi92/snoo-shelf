@@ -16,6 +16,10 @@ export class SnooShelf {
   constructor() {
     this._dropboxApi = new DropboxApi(dropboxConfig)
     this._redditApi = new RedditApi(redditConfig)
+    this._tags = []
+    this._taggedPosts = []
+    this._subs = []
+    this._posts = []
   }
 
   private setData(data: any[]): any[] {
@@ -100,15 +104,16 @@ export class SnooShelf {
    * testing...
    */
   public run(): void {
-    const api = new RedditApi(redditConfig)
-    api.getMySubscriptions().then(val => console.log(val[0].display_name_prefixed))
-    api.getMySavedPosts().then(val => console.log(val[0].title))
-    const persistence = new DropboxApi(dropboxConfig)
-    persistence
-      .write("test", "{ \"id\": 1, \"name\": \"A green door\", \"price\": 12.50, \"tags\": [\"home\", \"green\"] }")
-      .then(val => console.log(val))
-    persistence
-      .read("test")
-      .then(val => console.log(val.fileBinary))
+    // const api = new RedditApi(redditConfig)
+    // api.getMySubscriptions().then(val => console.log(val[0].display_name_prefixed))
+    // api.getMySavedPosts().then(val => console.log(val[0].title))
+    // const persistence = new DropboxApi(dropboxConfig)
+    // persistence
+    //   .write("test", "{ \"id\": 1, \"name\": \"A green door\", \"price\": 12.50, \"tags\": [\"home\", \"green\"] }")
+    //   .then(val => console.log(val))
+    // persistence
+    //   .read("test")
+    //   .then(val => console.log(val.fileBinary))
+    this.fetchShelf().then((posts: Post[]) => console.log(posts[0]))
   }
 }
