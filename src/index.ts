@@ -90,7 +90,7 @@ export class SnooShelf {
     return newTag
   }
 
-  public removeTag(tagName: string) {
+  public removeTag(tagName: string): void {
     const tagIndex = this._tags.indexOf(this._tags.filter((tp: Tag) => tp.name == tagName)[0])
     if (tagIndex > -1) {
       this._tags.splice(tagIndex, 1)

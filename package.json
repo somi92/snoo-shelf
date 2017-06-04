@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Library for organizing Reddit saved posts.",
   "main": "dist/snoo_shelf.js",
+  "types": "types/index.d.ts",
   "scripts": {
     "build": "webpack --env build",
     "dev": "webpack --progress --colors --watch --env dev",
