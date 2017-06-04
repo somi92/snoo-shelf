@@ -1,4 +1,4 @@
-declare class Post {
+export declare class Post {
     id: string;
     subreddit_name_prefixed: string;
     view_count: number;
@@ -18,12 +18,12 @@ declare class Post {
     tags: string[];
 }
 
-declare class Tag {
+export declare class Tag {
     name: string;
     description: string;
 }
 
-declare class SnooShelf {
+export declare class SnooShelf {
     fetchShelf(): Promise<Post[]>;
     saveShelf(): Promise<boolean>;
     tagPost(post: Post, tags: string[]): Post;
